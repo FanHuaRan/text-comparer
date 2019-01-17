@@ -6,27 +6,46 @@ package com.github.fhr.compare;
  * @description
  */
 public class ModifyRow {
-    private final String rowNum;
 
-    private final String modifyType;
+    private final Integer rowNum;
+
+    private final Integer modifyType;
 
     private final String rowValue;
 
-    public ModifyRow(String rowNum, String modifyType, String rowValue) {
+    // old row value only use when modify is update.
+    private final String oldRowValue;
+
+    public ModifyRow(Integer rowNum, Integer modifyType, String rowValue, String oldRowValue) {
         this.rowNum = rowNum;
         this.modifyType = modifyType;
         this.rowValue = rowValue;
+        this.oldRowValue = oldRowValue;
     }
 
-    public String getRowNum() {
+    public Integer getRowNum() {
         return rowNum;
     }
 
-    public String getModifyType() {
+    public Integer getModifyType() {
         return modifyType;
     }
 
     public String getRowValue() {
         return rowValue;
+    }
+
+    public String getOldRowValue() {
+        return oldRowValue;
+    }
+
+    @Override
+    public String toString() {
+        return "ModifyRow{" +
+                "rowNum=" + rowNum +
+                ", modifyType=" + modifyType +
+                ", rowValue='" + rowValue + '\'' +
+                ", oldRowValue='" + oldRowValue + '\'' +
+                '}';
     }
 }
