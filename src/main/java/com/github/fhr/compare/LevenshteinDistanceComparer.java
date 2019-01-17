@@ -37,13 +37,13 @@ public class LevenshteinDistanceComparer {
 
         for (int i = 1; i <= srcLen; i++) {
             for (int j = 1; j <= desLen; j++) {
-                int case1 = dp[i - 1][j] + 1;// 前i-1个字符变为前j个字符前-1个字符
-                int case2 = dp[i][j - 1] + 1;// 前i个字符变为前j-1个字符后+1个字符
-                int case3 = dp[i - 1][j - 1];// 前i-1个字符变为前j-1个字符
+                int case1 = dp[i - 1][j] + 1;// 前i-1个行变为前j行-1行
+                int case2 = dp[i][j - 1] + 1;// 前i行变为前j-1行后+1行
+                int case3 = dp[i - 1][j - 1];// 前i-1行变为前j-1行
                 String srcRow = srcRows[i - 1];
                 String destRow = destRows[j - 1];
                 if (!equalStr(srcRow, destRow, ignorStrs)) {
-                    case3++; // i字符与j字符不相等，+1
+                    case3++; // i行与j行不相等，+1
                 }
 
                 dp[i][j] = Math.min(Math.min(case1, case2), case3);
@@ -52,6 +52,34 @@ public class LevenshteinDistanceComparer {
 
         int diff = dp[srcLen][desLen];
         compareResult.setDiff(diff);
+
+        // 进行回溯
+        int currentSrc = srcLen;
+        int currentDest = desLen;
+        while (currentSrc > 0 || currentDest > 0) {
+            if (currentSrc != 0 && currentDest != 0) {
+                if (dp[currentSrc][currentDest] == dp[currentSrc - 1][currentDest - 1]) {
+                    // the same row
+                    currentSrc--;
+                    currentDest--;
+                    continue;
+                }
+            }
+
+            if (currentSrc > 0) {
+                int left = dp[currentSrc - 1][currentDest];
+                if (left == dp[currentSrc][currentDest] - 1) {
+                    System.out.println("- " + srcRows[currentSrc - 1]);
+                    currentSrc--;
+                    continue;
+                }
+            }
+
+            // int top = dp[currentSrc][currentDest];
+            System.out.println("+ " + destRows[currentDest]);
+            currentDest--;
+        }
+
         return compareResult;
     }
 
