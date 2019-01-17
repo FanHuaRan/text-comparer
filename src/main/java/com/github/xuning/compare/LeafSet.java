@@ -1,4 +1,4 @@
-package xuning.compare;
+package com.github.xuning.compare;
 
 import java.util.Comparator;
 import java.util.LinkedList;

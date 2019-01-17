@@ -10,4 +10,4 @@ It uses a high performance graph algorithm to find the most of match lines in th
 ```
 java -jar compare.jar <file1> <file2>
 ```
-* Library reference example: `src/main/java/App.java`, `src/test/java/AppTest.java`
+* Library reference example: `src/main/java/com.github.xuning.App.java`, `src/test/java/AppTest.java`

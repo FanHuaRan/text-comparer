@@ -1,6 +1,7 @@
-import xuning.compare.Comparer;
-import org.apache.log4j.PropertyConfigurator;
-import xuning.util.TextFile;
+package com.github.xuning;
+
+import com.github.xuning.compare.Comparer;
+import com.github.xuning.util.TextFile;
 
 import java.io.IOException;
 import java.util.List;

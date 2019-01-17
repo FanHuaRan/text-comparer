@@ -1,4 +1,4 @@
-package xuning.compare;
+package com.github.xuning.compare;
 
 /**
  * The class {@code Difference} represents a result of difference by

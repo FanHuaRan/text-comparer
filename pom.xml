@@ -43,7 +43,7 @@
                     </descriptorRefs>
                     <archive>
                         <manifest>
-                            <mainClass>App</mainClass>
+                            <mainClass>com.github.xuning.App</mainClass>
                         </manifest>
                     </archive>
                 </configuration>

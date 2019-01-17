@@ -1,4 +1,4 @@
-package xuning.util;
+package com.github.xuning.util;
 
 import java.io.BufferedReader;
 import java.io.File;

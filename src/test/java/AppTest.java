@@ -1,7 +1,6 @@
-import org.apache.log4j.PropertyConfigurator;
 import org.junit.Test;
-import xuning.compare.CompareResult;
-import xuning.compare.Comparer;
+import com.github.xuning.compare.CompareResult;
+import com.github.xuning.compare.Comparer;
 
 import java.util.LinkedList;
 import java.util.List;
