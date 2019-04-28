@@ -8,6 +8,5 @@ It uses a high performance graph algorithm to find the most of match lines in th
 
 * Command execute:
 ```
-java -jar compare.jar <file1> <file2>
+java -jar compare1.0.jar <file1> <file2>
 ```
-* Library reference example: `src/main/java/com.github.xuning.App.java`, `src/test/java/AppTest.java`
