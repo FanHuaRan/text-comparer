@@ -6,7 +6,7 @@
 
     <groupId>xuning</groupId>
     <artifactId>compare</artifactId>
-    <version>1.0</version>
+    <!--<version>1.0</version>-->
 
     <dependencies>
         <dependency>
@@ -43,7 +43,7 @@
                     </descriptorRefs>
                     <archive>
                         <manifest>
-                            <mainClass>com.github.xuning.App</mainClass>
+                            <mainClass>com.github.fhr.App</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
